@@ -1,0 +1,873 @@
+/* ==========================================================================
+   WANDERLUST — Basic Student Travel & Tourism Website (style.css)
+   Clean, responsive design made with Vanilla CSS
+   ========================================================================== */
+
+/* --- 1. Global Reset & Variables --- */
+:root {
+    --primary-color: #176B68;
+    --primary-hover: #12524f;
+    --secondary-color: #E29578;
+    --dark-color: #1A2E2E;
+    --light-bg: #F8F9FA;
+    --card-bg: #FFFFFF;
+    --text-color: #2D3748;
+    --text-muted: #718096;
+    --border-color: #E2E8F0;
+    --radius: 8px;
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    --shadow-hover: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+}
+
+body {
+    font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    color: var(--text-color);
+    background-color: var(--light-bg);
+    line-height: 1.6;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button {
+    font-family: inherit;
+    cursor: pointer;
+    border: none;
+    background: none;
+}
+
+.container {
+    width: 90%;
+    max-width: 1160px;
+    margin: 0 auto;
+}
+
+.section {
+    padding: 70px 0;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* --- 2. Buttons --- */
+.btn {
+    display: inline-block;
+    padding: 11px 22px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    border-radius: var(--radius);
+    transition: all 0.25s ease;
+    text-align: center;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: #FFFFFF;
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-hover);
+}
+
+.btn-secondary {
+    background-color: rgba(255, 255, 255, 0.9);
+    color: var(--dark-color);
+}
+
+.btn-secondary:hover {
+    background-color: #FFFFFF;
+}
+
+.btn-outline {
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+}
+
+.btn-outline:hover {
+    background-color: var(--primary-color);
+    color: #FFFFFF;
+}
+
+.btn-large {
+    padding: 13px 28px;
+    font-size: 1rem;
+    width: 100%;
+}
+
+/* --- 3. Header & Navigation --- */
+.header {
+    position: sticky;
+    top: 0;
+    background-color: #FFFFFF;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+    z-index: 1000;
+}
+
+.header-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+}
+
+.logo-text {
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: var(--primary-color);
+}
+
+.nav-desktop .nav-links {
+    display: flex;
+    list-style: none;
+    gap: 28px;
+}
+
+.nav-link {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--text-color);
+    transition: color 0.2s;
+}
+
+.nav-link:hover {
+    color: var(--primary-color);
+}
+
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.btn-nav {
+    padding: 8px 18px;
+    font-size: 0.9rem;
+}
+
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    padding: 6px;
+}
+
+.menu-toggle .bar {
+    width: 24px;
+    height: 2px;
+    background-color: var(--text-color);
+    border-radius: 2px;
+}
+
+/* Mobile Drawer */
+.mobile-drawer {
+    display: none;
+    flex-direction: column;
+    background-color: #FFFFFF;
+    padding: 20px;
+    border-top: 1px solid var(--border-color);
+}
+
+.mobile-drawer.active {
+    display: flex;
+}
+
+.mobile-links {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-bottom: 18px;
+}
+
+.mobile-link {
+    font-size: 1.05rem;
+    font-weight: 500;
+    color: var(--text-color);
+}
+
+.btn-mobile-cta {
+    width: 100%;
+}
+
+/* --- 4. Hero Section --- */
+.hero {
+    position: relative;
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    color: #FFFFFF;
+    text-align: center;
+}
+
+.hero-media {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+}
+
+.hero-bg-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(15, 35, 35, 0.62);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px 0;
+}
+
+.hero-badge {
+    display: inline-block;
+    background-color: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    padding: 5px 16px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    margin-bottom: 20px;
+}
+
+.hero-title {
+    font-size: clamp(2.2rem, 5vw, 3.6rem);
+    font-weight: 700;
+    letter-spacing: 1px;
+    line-height: 1.2;
+    margin-bottom: 15px;
+}
+
+.hero-subtitle {
+    font-size: 1.2rem;
+    font-style: italic;
+    color: #F1F5F9;
+    margin-bottom: 30px;
+}
+
+.hero-actions {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+/* --- 5. Section Headers --- */
+.section-head {
+    margin-bottom: 45px;
+}
+
+.section-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--dark-color);
+    margin-bottom: 8px;
+}
+
+.section-desc {
+    font-size: 1rem;
+    color: var(--text-muted);
+}
+
+/* Category Filter Pills */
+.filter-pills {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 24px;
+}
+
+.pill {
+    padding: 8px 18px;
+    font-size: 0.88rem;
+    font-weight: 500;
+    border-radius: 20px;
+    background-color: #FFFFFF;
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
+    transition: all 0.2s ease;
+}
+
+.pill.active,
+.pill:hover {
+    background-color: var(--primary-color);
+    color: #FFFFFF;
+    border-color: var(--primary-color);
+}
+
+/* --- 6. Destinations Grid & Cards --- */
+.destinations-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 28px;
+}
+
+.dest-card {
+    background-color: var(--card-bg);
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--border-color);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.dest-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-hover);
+}
+
+.card-media {
+    position: relative;
+    height: 210px;
+    overflow: hidden;
+}
+
+.card-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.dest-card:hover .card-media img {
+    transform: scale(1.04);
+}
+
+.card-tag {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    background: rgba(26, 46, 46, 0.82);
+    color: #FFFFFF;
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 4px 10px;
+    border-radius: 4px;
+}
+
+.card-body {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.card-meta {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    margin-bottom: 8px;
+}
+
+.card-title {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--dark-color);
+    margin-bottom: 8px;
+}
+
+.card-desc {
+    font-size: 0.88rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+    margin-bottom: 18px;
+    flex-grow: 1;
+}
+
+.card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid var(--border-color);
+    padding-top: 14px;
+}
+
+.price-val {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.price-val small {
+    font-size: 0.75rem;
+    font-weight: 400;
+    color: var(--text-muted);
+}
+
+.btn-card {
+    background-color: var(--primary-color);
+    color: #FFFFFF;
+    padding: 6px 16px;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    transition: background-color 0.2s;
+}
+
+.btn-card:hover {
+    background-color: var(--primary-hover);
+}
+
+/* --- 7. Featured Trip Packages --- */
+.journeys-section {
+    background-color: #FFFFFF;
+}
+
+.journeys-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 28px;
+}
+
+.journey-card {
+    background-color: var(--light-bg);
+    border-radius: var(--radius);
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow);
+    display: flex;
+    flex-direction: column;
+}
+
+.journey-img-wrap {
+    position: relative;
+    height: 200px;
+}
+
+.journey-img-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.journey-badge {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background-color: var(--primary-color);
+    color: #FFFFFF;
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+.journey-content {
+    padding: 22px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.journey-meta {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    margin-bottom: 8px;
+}
+
+.journey-content h3 {
+    font-size: 1.25rem;
+    color: var(--dark-color);
+    margin-bottom: 8px;
+}
+
+.journey-content p {
+    font-size: 0.88rem;
+    color: var(--text-muted);
+    margin-bottom: 14px;
+    line-height: 1.5;
+}
+
+.journey-features {
+    list-style: none;
+    font-size: 0.85rem;
+    color: var(--text-color);
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-bottom: 20px;
+    flex-grow: 1;
+}
+
+.journey-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid var(--border-color);
+    padding-top: 14px;
+}
+
+.journey-footer .price {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.journey-footer .price small {
+    font-size: 0.75rem;
+    font-weight: 400;
+    color: var(--text-muted);
+}
+
+/* --- 8. Interactive Trip Planner --- */
+.planner-section {
+    background-color: var(--light-bg);
+}
+
+.planner-wrapper {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.planner-form {
+    background-color: #FFFFFF;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius);
+    padding: 34px;
+    box-shadow: var(--shadow);
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 22px;
+    margin-bottom: 26px;
+}
+
+.form-field {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-field label {
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: var(--dark-color);
+    margin-bottom: 8px;
+}
+
+.form-field select,
+.form-field input[type="range"] {
+    width: 100%;
+    padding: 10px 14px;
+    border-radius: var(--radius);
+    border: 1px solid var(--border-color);
+    font-size: 0.9rem;
+    font-family: inherit;
+    background-color: #FFFFFF;
+    outline: none;
+}
+
+.form-field select:focus {
+    border-color: var(--primary-color);
+}
+
+.slider-labels {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    margin-top: 4px;
+}
+
+.style-options {
+    display: flex;
+    gap: 8px;
+}
+
+.style-chip {
+    flex: 1;
+    padding: 8px 10px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius);
+    background-color: var(--light-bg);
+    color: var(--text-color);
+    transition: all 0.2s;
+}
+
+.style-chip.active,
+.style-chip:hover {
+    background-color: var(--primary-color);
+    color: #FFFFFF;
+    border-color: var(--primary-color);
+}
+
+/* Planner Result Card */
+.plan-result-card {
+    margin-top: 30px;
+    background-color: #FFFFFF;
+    border: 2px solid var(--primary-color);
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow-hover);
+}
+
+.result-header {
+    background-color: var(--primary-color);
+    color: #FFFFFF;
+    padding: 20px 24px;
+}
+
+.result-badge {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    background: rgba(255, 255, 255, 0.25);
+    padding: 3px 8px;
+    border-radius: 4px;
+    display: inline-block;
+    margin-bottom: 6px;
+}
+
+.result-title {
+    font-size: 1.4rem;
+    margin-bottom: 4px;
+}
+
+.result-tagline {
+    font-size: 0.88rem;
+    opacity: 0.9;
+}
+
+.result-body {
+    padding: 24px;
+}
+
+.result-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    padding-bottom: 18px;
+    border-bottom: 1px solid var(--border-color);
+    margin-bottom: 18px;
+}
+
+.res-stat .r-lbl {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    display: block;
+}
+
+.res-stat .r-val {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--dark-color);
+}
+
+.result-highlights h4 {
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+    color: var(--dark-color);
+}
+
+.result-highlights ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    font-size: 0.85rem;
+    color: var(--text-color);
+    margin-bottom: 22px;
+}
+
+.result-cta-row {
+    display: flex;
+    gap: 12px;
+}
+
+/* --- 9. Simple Clean Student Footer --- */
+.simple-footer {
+    background-color: var(--dark-color);
+    color: #E2E8F0;
+    padding: 26px 0;
+    font-size: 0.88rem;
+}
+
+/* --- 10. Destination Modal --- */
+.modal-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 2000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.modal-card {
+    background: #FFFFFF;
+    border-radius: var(--radius);
+    width: 100%;
+    max-width: 620px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+}
+
+.modal-close {
+    position: absolute;
+    top: 12px;
+    right: 14px;
+    z-index: 10;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.6);
+    color: #FFFFFF;
+    font-size: 1.3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+}
+
+.modal-image {
+    position: relative;
+    height: 240px;
+}
+
+.modal-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.modal-badge {
+    position: absolute;
+    bottom: 12px;
+    left: 16px;
+    padding: 4px 10px;
+    background: rgba(26, 46, 46, 0.85);
+    color: #FFFFFF;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+.modal-content {
+    padding: 24px;
+}
+
+.modal-loc {
+    font-size: 0.8rem;
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.modal-title {
+    font-size: 1.5rem;
+    color: var(--dark-color);
+    margin: 4px 0 10px 0;
+}
+
+.modal-desc {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    line-height: 1.55;
+    margin-bottom: 16px;
+}
+
+.modal-highlights h4 {
+    font-size: 0.85rem;
+    color: var(--dark-color);
+    margin-bottom: 8px;
+}
+
+.modal-highlights ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    font-size: 0.85rem;
+    margin-bottom: 20px;
+}
+
+.modal-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid var(--border-color);
+    padding-top: 14px;
+}
+
+.m-price-lbl {
+    font-size: 0.72rem;
+    color: var(--text-muted);
+    display: block;
+}
+
+.m-price-val {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+/* --- 11. Responsive Media Queries --- */
+@media (max-width: 768px) {
+    .nav-desktop,
+    .btn-nav {
+        display: none;
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+
+    .destinations-grid,
+    .journeys-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .result-stats {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-title {
+        font-size: 2rem;
+    }
+}
