@@ -4,36 +4,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WANDERLUST — Travel & Tourism</title>
-    <meta name="description" content="A simple student travel and tourism website showcasing popular destinations across India.">
+    <title>WANDERLUST — Find Your Next Escape | Luxury Travel India</title>
+    <meta name="description" content="Curated journeys across India's most extraordinary landscapes. From the Himalayan passes to serene coastal sanctuaries.">
 
-    <!-- Clean Google Fonts: Poppins / Plus Jakarta Sans -->
+    <!-- Google Fonts: Editorial Serif (Playfair Display) + Clean Sans (Plus Jakarta Sans) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
     <!-- Stylesheet -->
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+    <!-- Reading Progress Bar -->
+    <div id="scrollProgress" class="scroll-progress"></div>
 
     <!-- ==============================================
-         NAVIGATION BAR
+         NAVIGATION BAR (Sticky & Frosted Glass)
          ============================================== -->
     <header id="mainHeader" class="header">
         <div class="header-inner container">
             <a href="#home" class="logo">
                 <span class="logo-text">WANDERLUST</span>
+                <span class="logo-sub">JOURNEYS</span>
             </a>
 
             <!-- Desktop Nav Links -->
             <nav class="nav-desktop">
                 <ul class="nav-links">
-                    <li><a href="#home" class="nav-link">Home</a></li>
                     <li><a href="#destinations" class="nav-link">Destinations</a></li>
-                    <li><a href="#journeys" class="nav-link">Featured Trips</a></li>
-                    <li><a href="#planner" class="nav-link">Plan Trip</a></li>
+                    <li><a href="#journeys" class="nav-link">Featured Journeys</a></li>
+                    <li><a href="#regions" class="nav-link">Regions</a></li>
+                    <li><a href="#stories" class="nav-link">Stories</a></li>
+                    <li><a href="#planner" class="nav-link">Trip Planner</a></li>
                 </ul>
             </nav>
 
@@ -51,17 +55,18 @@
         <!-- Mobile Drawer -->
         <div id="mobileDrawer" class="mobile-drawer">
             <ul class="mobile-links">
-                <li><a href="#home" class="mobile-link">Home</a></li>
                 <li><a href="#destinations" class="mobile-link">Destinations</a></li>
-                <li><a href="#journeys" class="mobile-link">Featured Trips</a></li>
-                <li><a href="#planner" class="mobile-link">Plan Trip</a></li>
+                <li><a href="#journeys" class="mobile-link">Featured Journeys</a></li>
+                <li><a href="#regions" class="mobile-link">Regions</a></li>
+                <li><a href="#stories" class="mobile-link">Stories</a></li>
+                <li><a href="#planner" class="mobile-link">Plan My Trip</a></li>
             </ul>
             <a href="#planner" class="btn btn-primary btn-mobile-cta">Start Planning</a>
         </div>
     </header>
 
     <!-- ==============================================
-         1. HERO SECTION
+         1. HERO SECTION (Cinematic Viewport)
          ============================================== -->
     <section id="home" class="hero">
         <div class="hero-media">
@@ -70,236 +75,306 @@
         </div>
 
         <div class="hero-content container">
-            <div class="hero-badge">TRAVEL & TOURISM PROJECT</div>
-            <h1 class="hero-title">
-                FIND YOUR NEXT ESCAPE
+            <div class="hero-badge animate-fade-down">
+                <span class="badge-dot"></span> NOT ALL CLASSROOMS HAVE FOUR WALLS
+            </div>
+            <h1 class="hero-title animate-fade-up">
+                FIND YOUR NEXT <br><span class="italic-serif">ESCAPE</span>
             </h1>
-            <p class="hero-subtitle">
-                "Not all classrooms have four walls."
+            <p class="hero-subtitle animate-fade-up delay-1">
+                “Find places that change the way you see the world.”
             </p>
-            <div class="hero-actions">
+            <div class="hero-actions animate-fade-up delay-2">
                 <a href="#destinations" class="btn btn-primary">Explore Destinations</a>
                 <a href="#planner" class="btn btn-secondary">Plan My Trip</a>
             </div>
+
+            <!-- Highlights Bar -->
+            <div class="hero-stats animate-fade-up delay-3">
+                <div class="stat-col">
+                    <span class="stat-number">42+</span>
+                    <span class="stat-label">UNESCO World Heritage Sites</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat-col">
+                    <span class="stat-number">100%</span>
+                    <span class="stat-label">Curated Authentic Routes</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat-col">
+                    <span class="stat-number">24/7</span>
+                    <span class="stat-label">On-Trip Concierge Support</span>
+                </div>
+            </div>
         </div>
+
+        <!-- Scroll Indicator -->
+        <a href="#destinations" class="scroll-indicator" aria-label="Scroll to destinations">
+            <span class="scroll-text">SCROLL TO EXPLORE</span>
+            <span class="scroll-arrow">↓</span>
+        </a>
     </section>
 
     <!-- ==============================================
-         2. DESTINATIONS SECTION
+         2. DESTINATIONS SECTION (Mixed Editorial Grid)
          ============================================== -->
     <section id="destinations" class="section destinations-section">
         <div class="container">
             <div class="section-head text-center">
-                <h2 class="section-title">Popular Destinations</h2>
-                <p class="section-desc">Explore handpicked travel destinations across India with estimated budget.</p>
+                <span class="eyebrow">CURATED DISCOVERIES</span>
+                <h2 class="section-title">Where Will You Go Next?</h2>
+                <p class="section-desc">Handpicked places for unforgettable journeys across India.</p>
 
-                <!-- Category Filter Pills -->
+                <!-- Category Mood Filter Pills -->
                 <div class="filter-pills" id="filterPills">
                     <button class="pill active" data-filter="all">All Places</button>
-                    <button class="pill" data-filter="mountains">🏔 Mountains</button>
-                    <button class="pill" data-filter="beach">🌊 Beach</button>
-                    <button class="pill" data-filter="heritage">🏛 Heritage</button>
+                    <button class="pill" data-filter="adventure">🏔 Adventure</button>
+                    <button class="pill" data-filter="beach">🌊 Beach Escape</button>
                     <button class="pill" data-filter="nature">🌿 Nature</button>
+                    <button class="pill" data-filter="culture">🏛 Culture</button>
+                    <button class="pill" data-filter="wellness">🧘 Wellness</button>
                 </div>
             </div>
 
-            <!-- Destinations Card Grid -->
-            <div class="destinations-grid" id="destinationsGrid">
+            <!-- Mixed-size Editorial Destination Grid -->
+            <div class="editorial-grid" id="destinationsGrid">
 
-                <!-- 1. Ladakh -->
-                <article class="dest-card" data-category="mountains" data-dest="Ladakh">
+                <!-- 1. Ladakh (Feature Card - Large) -->
+                <article class="dest-card feature-wide" data-mood="adventure nature" data-dest="Ladakh">
                     <div class="card-media">
-                        <img src="images/ladakh.jpg" alt="Ladakh Pangong Lake" loading="lazy">
+                        <img src="images/ladakh.jpg" alt="Pangong Lake, Ladakh" loading="lazy">
                         <span class="card-tag">Highlands</span>
+                        <button class="btn-save" title="Save to wishlist" aria-label="Save destination">♡</button>
                     </div>
-                    <div class="card-body">
+                    <div class="card-overlay">
                         <div class="card-meta">
-                            <span class="card-location">📍 Ladakh, J&amp;K</span>
+                            <span class="card-location">📍 Ladakh &bull; Jammu &amp; Kashmir</span>
                             <span class="card-duration">7–8 Days</span>
                         </div>
                         <h3 class="card-title">Ladakh</h3>
-                        <p class="card-desc">High mountain passes, Buddhist monasteries, and crystal blue Pangong Lake.</p>
+                        <p class="card-story">High altitude passes, ancient cliffside monasteries, and the crystal indigo waters of Pangong Tso lake.</p>
                         <div class="card-footer">
                             <div class="price-wrap">
+                                <span class="price-label">Starting from</span>
                                 <span class="price-val">₹45,000 <small>/ person</small></span>
                             </div>
-                            <button class="btn-card" onclick="openDestinationModal('Ladakh')">Explore</button>
+                            <button class="btn-explore" onclick="openDestinationModal('Ladakh')">Explore &rarr;</button>
                         </div>
                     </div>
                 </article>
 
-                <!-- 2. Beas Kund -->
-                <article class="dest-card" data-category="mountains nature" data-dest="Beas Kund">
+                <!-- 2. Goa (Standard Card) -->
+                <article class="dest-card" data-mood="beach nature" data-dest="Goa">
                     <div class="card-media">
-                        <img src="images/beas-kund.jpg" alt="Beas Kund Manali" loading="lazy">
-                        <span class="card-tag">Alpine Trek</span>
-                    </div>
-                    <div class="card-body">
-                        <div class="card-meta">
-                            <span class="card-location">📍 Himachal Pradesh</span>
-                            <span class="card-duration">5 Days</span>
-                        </div>
-                        <h3 class="card-title">Beas Kund</h3>
-                        <p class="card-desc">Glacial streams, pine forests of Solang, and camping below snow peaks.</p>
-                        <div class="card-footer">
-                            <div class="price-wrap">
-                                <span class="price-val">₹15,000 <small>/ person</small></span>
-                            </div>
-                            <button class="btn-card" onclick="openDestinationModal('Beas Kund')">Explore</button>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- 3. Goa -->
-                <article class="dest-card" data-category="beach" data-dest="Goa">
-                    <div class="card-media">
-                        <img src="https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?auto=format&fit=crop&w=800&q=80" alt="Goa Beach" loading="lazy">
+                        <img src="https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?auto=format&fit=crop&w=1200&q=85" alt="Goa Coastline" loading="lazy">
                         <span class="card-tag">Coastal</span>
+                        <button class="btn-save" title="Save to wishlist" aria-label="Save destination">♡</button>
                     </div>
-                    <div class="card-body">
+                    <div class="card-overlay">
                         <div class="card-meta">
                             <span class="card-location">📍 Western Coast</span>
                             <span class="card-duration">5 Days</span>
                         </div>
                         <h3 class="card-title">Goa</h3>
-                        <p class="card-desc">Golden sandy beaches, Portuguese architecture, water sports, and beach sunsets.</p>
+                        <p class="card-story">Golden sands, Portuguese colonial villas, spice plantations, and vibrant beach sunsets.</p>
                         <div class="card-footer">
                             <div class="price-wrap">
+                                <span class="price-label">Starting from</span>
                                 <span class="price-val">₹20,000 <small>/ person</small></span>
                             </div>
-                            <button class="btn-card" onclick="openDestinationModal('Goa')">Explore</button>
+                            <button class="btn-explore" onclick="openDestinationModal('Goa')">Explore &rarr;</button>
                         </div>
                     </div>
                 </article>
 
-                <!-- 4. Rajasthan -->
-                <article class="dest-card" data-category="heritage" data-dest="Rajasthan">
+                <!-- 3. Kerala (Standard Card) -->
+                <article class="dest-card" data-mood="nature wellness" data-dest="Kerala">
                     <div class="card-media">
-                        <img src="images/rajasthan.jpg" alt="Mehrangarh Fort Rajasthan" loading="lazy">
-                        <span class="card-tag">Heritage</span>
+                        <img src="https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?auto=format&fit=crop&w=1200&q=85" alt="Kerala Backwaters" loading="lazy">
+                        <span class="card-tag">Sanctuary</span>
+                        <button class="btn-save" title="Save to wishlist" aria-label="Save destination">♡</button>
                     </div>
-                    <div class="card-body">
-                        <div class="card-meta">
-                            <span class="card-location">📍 Northwest India</span>
-                            <span class="card-duration">9 Days</span>
-                        </div>
-                        <h3 class="card-title">Rajasthan</h3>
-                        <p class="card-desc">Grand royal forts, palaces of Udaipur, and camel safaris in Thar desert.</p>
-                        <div class="card-footer">
-                            <div class="price-wrap">
-                                <span class="price-val">₹35,000 <small>/ person</small></span>
-                            </div>
-                            <button class="btn-card" onclick="openDestinationModal('Rajasthan')">Explore</button>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- 5. Rishikesh -->
-                <article class="dest-card" data-category="mountains heritage" data-dest="Rishikesh">
-                    <div class="card-media">
-                        <img src="images/rishikesh.png" alt="Rishikesh Ganga Aarti" loading="lazy">
-                        <span class="card-tag">Adventure &amp; Yoga</span>
-                    </div>
-                    <div class="card-body">
-                        <div class="card-meta">
-                            <span class="card-location">📍 Uttarakhand</span>
-                            <span class="card-duration">3 Days</span>
-                        </div>
-                        <h3 class="card-title">Rishikesh</h3>
-                        <p class="card-desc">River rafting on the Ganges, yoga ashrams, and evening holy Ganga aarti.</p>
-                        <div class="card-footer">
-                            <div class="price-wrap">
-                                <span class="price-val">₹12,000 <small>/ person</small></span>
-                            </div>
-                            <button class="btn-card" onclick="openDestinationModal('Rishikesh')">Explore</button>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- 6. Darjeeling -->
-                <article class="dest-card" data-category="mountains nature" data-dest="Darjeeling">
-                    <div class="card-media">
-                        <img src="https://images.unsplash.com/photo-1544644181-1484b3fdfc62?auto=format&fit=crop&w=800&q=80" alt="Darjeeling Hills" loading="lazy">
-                        <span class="card-tag">Tea Gardens</span>
-                    </div>
-                    <div class="card-body">
-                        <div class="card-meta">
-                            <span class="card-location">📍 West Bengal</span>
-                            <span class="card-duration">4 Days</span>
-                        </div>
-                        <h3 class="card-title">Darjeeling</h3>
-                        <p class="card-desc">Views of Kanchenjunga, historic toy trains, and lush green tea estates.</p>
-                        <div class="card-footer">
-                            <div class="price-wrap">
-                                <span class="price-val">₹15,000 <small>/ person</small></span>
-                            </div>
-                            <button class="btn-card" onclick="openDestinationModal('Darjeeling')">Explore</button>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- 7. Kerala -->
-                <article class="dest-card" data-category="nature beach" data-dest="Kerala">
-                    <div class="card-media">
-                        <img src="https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?auto=format&fit=crop&w=800&q=80" alt="Kerala Backwaters" loading="lazy">
-                        <span class="card-tag">Backwaters</span>
-                    </div>
-                    <div class="card-body">
+                    <div class="card-overlay">
                         <div class="card-meta">
                             <span class="card-location">📍 South India</span>
                             <span class="card-duration">8 Days</span>
                         </div>
                         <h3 class="card-title">Kerala</h3>
-                        <p class="card-desc">Peaceful backwaters houseboat stay, Munnar tea plantations, and ayurveda.</p>
+                        <p class="card-story">Tranquil backwater houseboats, Munnar's rolling tea hills, and century-old Ayurvedic therapies.</p>
                         <div class="card-footer">
                             <div class="price-wrap">
+                                <span class="price-label">Starting from</span>
                                 <span class="price-val">₹40,000 <small>/ person</small></span>
                             </div>
-                            <button class="btn-card" onclick="openDestinationModal('Kerala')">Explore</button>
+                            <button class="btn-explore" onclick="openDestinationModal('Kerala')">Explore &rarr;</button>
                         </div>
                     </div>
                 </article>
 
-                <!-- 8. Delhi -->
-                <article class="dest-card" data-category="heritage" data-dest="Delhi">
+                <!-- 4. Rajasthan (Feature Card - Large) -->
+                <article class="dest-card feature-wide" data-mood="culture" data-dest="Rajasthan">
                     <div class="card-media">
-                        <img src="https://images.unsplash.com/photo-1587474260584-136574528ed5?auto=format&fit=crop&w=800&q=80" alt="Delhi India Gate" loading="lazy">
-                        <span class="card-tag">Capital City</span>
+                        <img src="images/rajasthan.jpg" alt="Mehrangarh Fort and Jaswant Thada, Rajasthan" loading="lazy">
+                        <span class="card-tag">Royal Heritage</span>
+                        <button class="btn-save" title="Save to wishlist" aria-label="Save destination">♡</button>
                     </div>
-                    <div class="card-body">
+                    <div class="card-overlay">
                         <div class="card-meta">
-                            <span class="card-location">📍 Delhi NCR</span>
-                            <span class="card-duration">4 Days</span>
+                            <span class="card-location">📍 Northwest India</span>
+                            <span class="card-duration">9 Days</span>
                         </div>
-                        <h3 class="card-title">Delhi</h3>
-                        <p class="card-desc">Historic monuments like Qutub Minar, Red Fort, bustling Chandni Chowk, and street food.</p>
+                        <h3 class="card-title">Rajasthan</h3>
+                        <p class="card-story">The land of kings. Magnificent desert fortresses, marble palaces in Udaipur, and golden Thar sand dunes.</p>
                         <div class="card-footer">
                             <div class="price-wrap">
+                                <span class="price-label">Starting from</span>
+                                <span class="price-val">₹35,000 <small>/ person</small></span>
+                            </div>
+                            <button class="btn-explore" onclick="openDestinationModal('Rajasthan')">Explore &rarr;</button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 5. Rishikesh (Standard Card) -->
+                <article class="dest-card" data-mood="adventure wellness culture" data-dest="Rishikesh">
+                    <div class="card-media">
+                        <img src="images/rishikesh.png" alt="Rishikesh Ganga Aarti" loading="lazy">
+                        <span class="card-tag">Spiritual &amp; Wild</span>
+                        <button class="btn-save" title="Save to wishlist" aria-label="Save destination">♡</button>
+                    </div>
+                    <div class="card-overlay">
+                        <div class="card-meta">
+                            <span class="card-location">📍 Uttarakhand</span>
+                            <span class="card-duration">3 Days</span>
+                        </div>
+                        <h3 class="card-title">Rishikesh</h3>
+                        <p class="card-story">White-water rafting on the emerald Ganges, Himalayan foothills, and sacred twilight aarti chants.</p>
+                        <div class="card-footer">
+                            <div class="price-wrap">
+                                <span class="price-label">Starting from</span>
                                 <span class="price-val">₹12,000 <small>/ person</small></span>
                             </div>
-                            <button class="btn-card" onclick="openDestinationModal('Delhi')">Explore</button>
+                            <button class="btn-explore" onclick="openDestinationModal('Rishikesh')">Explore &rarr;</button>
                         </div>
                     </div>
                 </article>
 
-                <!-- 9. Bandhavgarh -->
-                <article class="dest-card" data-category="nature" data-dest="Bandhavgarh">
+                <!-- 6. Darjeeling (Standard Card) -->
+                <article class="dest-card" data-mood="nature culture" data-dest="Darjeeling">
                     <div class="card-media">
-                        <img src="https://images.unsplash.com/photo-1561731216-c3a4d99437d5?auto=format&fit=crop&w=800&q=80" alt="Bandhavgarh National Park" loading="lazy">
-                        <span class="card-tag">Wildlife</span>
+                        <img src="https://images.unsplash.com/photo-1544644181-1484b3fdfc62?auto=format&fit=crop&w=1200&q=85" alt="Darjeeling Hills" loading="lazy">
+                        <span class="card-tag">Tea Estates</span>
+                        <button class="btn-save" title="Save to wishlist" aria-label="Save destination">♡</button>
                     </div>
-                    <div class="card-body">
+                    <div class="card-overlay">
                         <div class="card-meta">
-                            <span class="card-location">📍 Madhya Pradesh</span>
+                            <span class="card-location">📍 West Bengal</span>
                             <span class="card-duration">4 Days</span>
                         </div>
-                        <h3 class="card-title">Bandhavgarh</h3>
-                        <p class="card-desc">Famous tiger reserve with thrilling jungle safaris and ancient fort ruins.</p>
+                        <h3 class="card-title">Darjeeling</h3>
+                        <p class="card-story">Misty morning sunrises over Mount Kanchenjunga, historic toy trains, and world-renowned tea gardens.</p>
                         <div class="card-footer">
                             <div class="price-wrap">
-                                <span class="price-val">₹20,000 <small>/ person</small></span>
+                                <span class="price-label">Starting from</span>
+                                <span class="price-val">₹15,000 <small>/ person</small></span>
                             </div>
-                            <button class="btn-card" onclick="openDestinationModal('Bandhavgarh')">Explore</button>
+                            <button class="btn-explore" onclick="openDestinationModal('Darjeeling')">Explore &rarr;</button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 7. Meghalaya (Standard Card) -->
+                <article class="dest-card" data-mood="nature adventure" data-dest="Meghalaya">
+                    <div class="card-media">
+                        <img src="https://images.unsplash.com/photo-1626014303757-640a43fa4841?auto=format&fit=crop&w=1200&q=85" alt="Meghalaya Waterfalls" loading="lazy">
+                        <span class="card-tag">Cloud Realm</span>
+                        <button class="btn-save" title="Save to wishlist" aria-label="Save destination">♡</button>
+                    </div>
+                    <div class="card-overlay">
+                        <div class="card-meta">
+                            <span class="card-location">📍 Northeast India</span>
+                            <span class="card-duration">6 Days</span>
+                        </div>
+                        <h3 class="card-title">Meghalaya</h3>
+                        <p class="card-story">Living Root Bridges in Cherrapunji, crystal waters of Dawki river, and thundering waterfalls.</p>
+                        <div class="card-footer">
+                            <div class="price-wrap">
+                                <span class="price-label">Starting from</span>
+                                <span class="price-val">₹24,000 <small>/ person</small></span>
+                            </div>
+                            <button class="btn-explore" onclick="openDestinationModal('Meghalaya')">Explore &rarr;</button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 8. Andaman Islands (Standard Card) -->
+                <article class="dest-card" data-mood="beach adventure" data-dest="Andaman">
+                    <div class="card-media">
+                        <img src="https://images.unsplash.com/photo-1589308078059-be1415eab4c3?auto=format&fit=crop&w=1200&q=85" alt="Andaman Havelock Island" loading="lazy">
+                        <span class="card-tag">Archipelago</span>
+                        <button class="btn-save" title="Save to wishlist" aria-label="Save destination">♡</button>
+                    </div>
+                    <div class="card-overlay">
+                        <div class="card-meta">
+                            <span class="card-location">📍 Bay of Bengal</span>
+                            <span class="card-duration">6 Days</span>
+                        </div>
+                        <h3 class="card-title">Andaman</h3>
+                        <p class="card-story">Pristine Radhanagar Beach, turquoise coral lagoons, bioluminescent night kayaking, and rainforests.</p>
+                        <div class="card-footer">
+                            <div class="price-wrap">
+                                <span class="price-label">Starting from</span>
+                                <span class="price-val">₹38,000 <small>/ person</small></span>
+                            </div>
+                            <button class="btn-explore" onclick="openDestinationModal('Andaman')">Explore &rarr;</button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 9. Manali & Beas Kund (Standard Card) -->
+                <article class="dest-card" data-mood="adventure nature" data-dest="Beas Kund">
+                    <div class="card-media">
+                        <img src="images/beas-kund.jpg" alt="Beas Kund Trek Valley" loading="lazy">
+                        <span class="card-tag">Alpine Valley</span>
+                        <button class="btn-save" title="Save to wishlist" aria-label="Save destination">♡</button>
+                    </div>
+                    <div class="card-overlay">
+                        <div class="card-meta">
+                            <span class="card-location">📍 Himachal Pradesh</span>
+                            <span class="card-duration">5 Days</span>
+                        </div>
+                        <h3 class="card-title">Manali &bull; Beas Kund</h3>
+                        <p class="card-story">Glacial mountain streams, pine forests of Solang, and high-altitude alpine camping below Hanuman Tibba.</p>
+                        <div class="card-footer">
+                            <div class="price-wrap">
+                                <span class="price-label">Starting from</span>
+                                <span class="price-val">₹15,000 <small>/ person</small></span>
+                            </div>
+                            <button class="btn-explore" onclick="openDestinationModal('Beas Kund')">Explore &rarr;</button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 10. Varanasi (Standard Card) -->
+                <article class="dest-card" data-mood="culture" data-dest="Varanasi">
+                    <div class="card-media">
+                        <img src="https://images.unsplash.com/photo-1561361513-2d000a50f0dc?auto=format&fit=crop&w=1200&q=85" alt="Varanasi Ghats" loading="lazy">
+                        <span class="card-tag">Eternal City</span>
+                        <button class="btn-save" title="Save to wishlist" aria-label="Save destination">♡</button>
+                    </div>
+                    <div class="card-overlay">
+                        <div class="card-meta">
+                            <span class="card-location">📍 Uttar Pradesh</span>
+                            <span class="card-duration">3 Days</span>
+                        </div>
+                        <h3 class="card-title">Varanasi</h3>
+                        <p class="card-story">One of the world's oldest inhabited cities. Sunrise riverboat rides, sacred ghats, and labyrinthine alleys.</p>
+                        <div class="card-footer">
+                            <div class="price-wrap">
+                                <span class="price-label">Starting from</span>
+                                <span class="price-val">₹12,000 <small>/ person</small></span>
+                            </div>
+                            <button class="btn-explore" onclick="openDestinationModal('Varanasi')">Explore &rarr;</button>
                         </div>
                     </div>
                 </article>
@@ -308,89 +383,101 @@
         </div>
     </section>
 
+
+
     <!-- ==============================================
-         3. FEATURED TRIPS
+         4. FEATURED JOURNEYS (Editorial Horizontal Stories)
          ============================================== -->
     <section id="journeys" class="section journeys-section">
         <div class="container">
-            <div class="section-head text-center">
-                <h2 class="section-title">Featured Trip Packages</h2>
-                <p class="section-desc">Popular pre-planned tour itineraries recommended for travelers.</p>
+            <div class="section-head">
+                <span class="eyebrow">SIGNATURE EXPERIENCES</span>
+                <h2 class="section-title">Journeys Worth Taking</h2>
+                <p class="section-desc">Handcrafted itineraries curated for deep immersion and effortless travel.</p>
             </div>
 
-            <div class="journeys-grid">
+            <div class="journey-cards-list">
 
-                <!-- Package 1: Ladakh Odyssey -->
-                <div class="journey-card">
-                    <div class="journey-img-wrap">
-                        <img src="images/ladakh.jpg" alt="Ladakh Odyssey" loading="lazy">
-                        <span class="journey-badge">Best Seller</span>
+                <!-- Journey 1: Himalayan Odyssey -->
+                <div class="journey-item">
+                    <div class="journey-media">
+                        <img src="images/ladakh.jpg" alt="Himalayan Escape" loading="lazy">
+                        <span class="journey-badge">Exclusive Route</span>
                     </div>
-                    <div class="journey-content">
-                        <div class="journey-meta">
-                            <span>⏱ 7–8 Days</span>
-                            <span>⭐ 4.9 Rating</span>
+                    <div class="journey-info">
+                        <div class="journey-tags">
+                            <span>🏔 Mountains</span>
+                            <span>⏱ 7 Days / 6 Nights</span>
+                            <span>⭐ 4.95 Rating</span>
                         </div>
-                        <h3>Himalayan Ladakh Odyssey</h3>
-                        <p>Travel across Khardung La pass, camp beside Pangong Tso, and visit ancient Buddhist monasteries.</p>
-                        <ul class="journey-features">
-                            <li>✔ Pangong Lake camping</li>
-                            <li>✔ Nubra Valley camel ride</li>
-                            <li>✔ Leh heritage market walk</li>
-                        </ul>
-                        <div class="journey-footer">
-                            <span class="price">₹45,000 <small>/ person</small></span>
-                            <button class="btn btn-primary" onclick="selectJourneyForPlan('Ladakh')">Book Trip</button>
+                        <h3 class="journey-title">The Himalayan High-Altitude Odyssey</h3>
+                        <p class="journey-excerpt">
+                            Traverse the world's highest motorable passes, stay in private eco-camps beside the changeless blues of Pangong Tso, and witness dawn chants at Thiksey Monastery. An unforgettable journey across the Trans-Himalayas.
+                        </p>
+                        <div class="journey-highlights">
+                            <span>✔ Private 4x4 Expedition Vehicle</span>
+                            <span>✔ Acclimatization Guidance</span>
+                            <span>✔ Heritage Stays in Leh</span>
+                        </div>
+                        <div class="journey-action">
+                            <span class="journey-price">₹45,000 <small>per traveler</small></span>
+                            <button class="btn btn-primary" onclick="selectJourneyForPlan('The Himalayan High-Altitude Odyssey', 'Ladakh', '45000')">Inquire Journey</button>
                         </div>
                     </div>
                 </div>
 
-                <!-- Package 2: Coastal Kerala -->
-                <div class="journey-card">
-                    <div class="journey-img-wrap">
-                        <img src="https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?auto=format&fit=crop&w=800&q=80" alt="Coastal Kerala" loading="lazy">
-                        <span class="journey-badge">Relaxing</span>
+                <!-- Journey 2: Coastal Sanctuary -->
+                <div class="journey-item reverse">
+                    <div class="journey-media">
+                        <img src="https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?auto=format&fit=crop&w=1200&q=85" alt="Coastal Kerala" loading="lazy">
+                        <span class="journey-badge">Slow Travel</span>
                     </div>
-                    <div class="journey-content">
-                        <div class="journey-meta">
-                            <span>⏱ 8 Days</span>
-                            <span>⭐ 4.8 Rating</span>
+                    <div class="journey-info">
+                        <div class="journey-tags">
+                            <span>🌊 Waters &amp; Ayurveda</span>
+                            <span>⏱ 8 Days / 7 Nights</span>
+                            <span>⭐ 4.98 Rating</span>
                         </div>
-                        <h3>Coastal Kerala Backwaters</h3>
-                        <p>Enjoy peaceful houseboat cruises on Alleppey backwaters and walk through mist-covered tea gardens of Munnar.</p>
-                        <ul class="journey-features">
-                            <li>✔ Houseboat overnight cruise</li>
-                            <li>✔ Munnar tea hill views</li>
-                            <li>✔ Authentic South Indian cuisine</li>
-                        </ul>
-                        <div class="journey-footer">
-                            <span class="price">₹40,000 <small>/ person</small></span>
-                            <button class="btn btn-primary" onclick="selectJourneyForPlan('Kerala')">Book Trip</button>
+                        <h3 class="journey-title">Coastal Paradise &bull; Backwaters &amp; Spice Hills</h3>
+                        <p class="journey-excerpt">
+                            Gliding through silent palm-fringed canals on a private handcrafted cedar houseboat. Savor traditional Sadya served on banana leaves, walk through misted cardamom hills, and conclude with authentic Ayurvedic rejuvenation.
+                        </p>
+                        <div class="journey-highlights">
+                            <span>✔ Deluxe Kettuvallam Private Cruise</span>
+                            <span>✔ Spice Plantation Trail</span>
+                            <span>✔ Beachside Ayurvedic Retreat</span>
+                        </div>
+                        <div class="journey-action">
+                            <span class="journey-price">₹40,000 <small>per traveler</small></span>
+                            <button class="btn btn-primary" onclick="selectJourneyForPlan('Coastal Paradise', 'Kerala', '40000')">Inquire Journey</button>
                         </div>
                     </div>
                 </div>
 
-                <!-- Package 3: Royal Rajasthan -->
-                <div class="journey-card">
-                    <div class="journey-img-wrap">
+                <!-- Journey 3: Royal Rajasthan -->
+                <div class="journey-item">
+                    <div class="journey-media">
                         <img src="images/rajasthan.jpg" alt="Royal Rajasthan" loading="lazy">
-                        <span class="journey-badge">Heritage</span>
+                        <span class="journey-badge">Heritage Grandeur</span>
                     </div>
-                    <div class="journey-content">
-                        <div class="journey-meta">
-                            <span>⏱ 9 Days</span>
-                            <span>⭐ 4.9 Rating</span>
+                    <div class="journey-info">
+                        <div class="journey-tags">
+                            <span>🏛 Royal Forts</span>
+                            <span>⏱ 9 Days / 8 Nights</span>
+                            <span>⭐ 4.92 Rating</span>
                         </div>
-                        <h3>Royal Forts of Rajasthan</h3>
-                        <p>Visit Mehrangarh Fort in Jodhpur, Lake Pichola in Udaipur, and experience a desert desert camp in Jaisalmer.</p>
-                        <ul class="journey-features">
-                            <li>✔ Mehrangarh &amp; Amber Fort</li>
-                            <li>✔ Thar desert camel safari</li>
-                            <li>✔ Folk dance &amp; camp stay</li>
-                        </ul>
-                        <div class="journey-footer">
-                            <span class="price">₹35,000 <small>/ person</small></span>
-                            <button class="btn btn-primary" onclick="selectJourneyForPlan('Rajasthan')">Book Trip</button>
+                        <h3 class="journey-title">Royal Rajasthan &bull; Fortresses of the Desert</h3>
+                        <p class="journey-excerpt">
+                            Step into royal courts, cliff-topping bastions of Mehrangarh, and shimmering marble pavilions over Lake Pichola. Sleep beneath star-filled desert skies in luxury Thar dunes camps with folk musicians serenading the night.
+                        </p>
+                        <div class="journey-highlights">
+                            <span>✔ Private Palatial Havelis</span>
+                            <span>✔ Sunset Camel Trek &amp; Camp</span>
+                            <span>✔ Exclusive Fort Heritage Guides</span>
+                        </div>
+                        <div class="journey-action">
+                            <span class="journey-price">₹35,000 <small>per traveler</small></span>
+                            <button class="btn btn-primary" onclick="selectJourneyForPlan('Royal Rajasthan', 'Rajasthan', '35000')">Inquire Journey</button>
                         </div>
                     </div>
                 </div>
@@ -400,13 +487,173 @@
     </section>
 
     <!-- ==============================================
-         4. TRIP PLANNER (Interactive Calculator)
+         5. INDIA REGIONAL DESTINATION EXPLORER
+         ============================================== -->
+    <section id="regions" class="section regions-section">
+        <div class="container">
+            <div class="section-head text-center">
+                <span class="eyebrow">GEOGRAPHIC DIVERSITY</span>
+                <h2 class="section-title">Explore by Region</h2>
+                <p class="section-desc">From the glaciated peaks of the North to tropical archipelagos of the South.</p>
+            </div>
+
+            <!-- Region Tabs -->
+            <div class="region-tabs" id="regionTabs">
+                <button class="region-tab active" data-region="north">North India</button>
+                <button class="region-tab" data-region="south">South India</button>
+                <button class="region-tab" data-region="west">West India</button>
+                <button class="region-tab" data-region="east">East India</button>
+                <button class="region-tab" data-region="northeast">Northeast India</button>
+            </div>
+
+            <!-- Region Content Display -->
+            <div class="region-showcase" id="regionShowcase">
+                <div class="region-media">
+                    <img id="regionImg" src="images/ladakh.jpg" alt="North India Showcase">
+                </div>
+                <div class="region-content">
+                    <span class="region-label" id="regionLabel">NORTH INDIA &bull; HIMALAYAN REALM</span>
+                    <h3 id="regionTitle" class="region-title">Snow Peaks, Sacred Rivers &amp; High Altitude</h3>
+                    <p id="regionDesc" class="region-desc">
+                        Home to the mighty Himalayas, ancient river civilizations, and spiritual sanctuaries. From the barren majesty of Ladakh and the adventure trails of Himachal to the sacred evening aartis of Rishikesh.
+                    </p>
+                    <div class="region-highlights-grid">
+                        <div class="rh-item">
+                            <strong>Featured Highlights:</strong>
+                            <span id="regionPlaces">Ladakh, Beas Kund, Rishikesh, Manali</span>
+                        </div>
+                        <div class="rh-item">
+                            <strong>Best Season to Travel:</strong>
+                            <span id="regionSeason">May–Sep (Mountains), Oct–Mar (Plains)</span>
+                        </div>
+                        <div class="rh-item">
+                            <strong>Signature Vibe:</strong>
+                            <span id="regionVibe">Adventure, High Passes, Yoga &amp; Serenity</span>
+                        </div>
+                    </div>
+                    <a href="#destinations" class="btn btn-outline">View North Destinations &rarr;</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==============================================
+         6. TRAVEL STORIES (Magazine-style Editorial)
+         ============================================== -->
+    <section id="stories" class="section stories-section">
+        <div class="container">
+            <div class="section-head">
+                <span class="eyebrow">FIELD NOTES &amp; MEMOIRS</span>
+                <h2 class="section-title">Travel Stories</h2>
+                <p class="section-desc">Personal reflections, slow journeys, and dispatches from the trail.</p>
+            </div>
+
+            <div class="stories-grid">
+                <article class="story-card">
+                    <div class="story-img-wrap">
+                        <img src="images/ladakh.jpg" alt="High Passes of Ladakh" loading="lazy">
+                        <span class="story-read">6 min read</span>
+                    </div>
+                    <div class="story-body">
+                        <span class="story-category">High Altitude</span>
+                        <h3 class="story-title">7 Days Above the Clouds: The Trans-Himalayan Solitude</h3>
+                        <p class="story-snippet">
+                            At 14,000 feet, sound ceases to behave the way you expect. Notes on waking up to frozen desert dawns and butter tea with Changpa nomads.
+                        </p>
+                        <span class="story-by">By Arjun Roy &bull; Photography &amp; Journal</span>
+                    </div>
+                </article>
+
+                <article class="story-card">
+                    <div class="story-img-wrap">
+                        <img src="https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?auto=format&fit=crop&w=1200&q=85" alt="Kerala Morning" loading="lazy">
+                        <span class="story-read">4 min read</span>
+                    </div>
+                    <div class="story-body">
+                        <span class="story-category">Slow Travel</span>
+                        <h3 class="story-title">Why Kerala Feels Like Another World: Dawn on the Waters</h3>
+                        <p class="story-snippet">
+                            Canoeing through quiet village inlets before the sun breaks through palm canopies. Fresh coconut pancakes and kingfishers dipping into the emerald tide.
+                        </p>
+                        <span class="story-by">By Meera Nair &bull; Cultural Dispatch</span>
+                    </div>
+                </article>
+
+                <article class="story-card">
+                    <div class="story-img-wrap">
+                        <img src="images/rajasthan.jpg" alt="Rajasthan Fort" loading="lazy">
+                        <span class="story-read">5 min read</span>
+                    </div>
+                    <div class="story-body">
+                        <span class="story-category">Heritage</span>
+                        <h3 class="story-title">Road-Tripping Through Rajasthan: From Thar Dunes to Lake Palaces</h3>
+                        <p class="story-snippet">
+                            Trading city highways for desert corridors lined with sandstone ruins, peacock calls, and midnight acoustic sarangi melodies under open skies.
+                        </p>
+                        <span class="story-by">By Devanshu Joshi &bull; Road Expedition</span>
+                    </div>
+                </article>
+
+                <article class="story-card">
+                    <div class="story-img-wrap">
+                        <img src="images/rishikesh.png" alt="Rishikesh River Aarti" loading="lazy">
+                        <span class="story-read">4 min read</span>
+                    </div>
+                    <div class="story-body">
+                        <span class="story-category">Spirit &amp; Solitude</span>
+                        <h3 class="story-title">Finding Peace in the Himalayas: Sacred Trails and Silent Valleys</h3>
+                        <p class="story-snippet">
+                            How three days beside the roaring upper Ganges and morning meditation restored a traveler’s sense of perspective and belonging.
+                        </p>
+                        <span class="story-by">By Sanjana Verma &bull; Wellness Memoir</span>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==============================================
+         7. WHY WANDERLUST (Brand Pillars)
+         ============================================== -->
+    <section class="section why-section">
+        <div class="container">
+            <div class="why-grid">
+                <div class="why-item">
+                    <div class="why-icon">✦</div>
+                    <h3>Curated Destinations</h3>
+                    <p>Every itinerary is vetted on the ground. No tourist traps, no rushed schedules, only authentic experiences.</p>
+                </div>
+
+                <div class="why-item">
+                    <div class="why-icon">✦</div>
+                    <h3>Authentic Experiences</h3>
+                    <p>Connect with local naturalists, heritage scholars, and village communities who call these lands home.</p>
+                </div>
+
+                <div class="why-item">
+                    <div class="why-icon">✦</div>
+                    <h3>Smart Trip Planning</h3>
+                    <p>Transparent transparent pricing with zero surprise charges. Optimized routes for comfortable pacing.</p>
+                </div>
+
+                <div class="why-item">
+                    <div class="why-icon">✦</div>
+                    <h3>Memorable Journeys</h3>
+                    <p>From seamless private logistics to 24/7 on-call travel support, travel with complete peace of mind.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==============================================
+         8. INTERACTIVE TRIP PLANNER (Smart Generator)
          ============================================== -->
     <section id="planner" class="section planner-section">
         <div class="container">
             <div class="section-head text-center">
+                <span class="eyebrow">CUSTOM BESPOKE ITINERARY</span>
                 <h2 class="section-title">Plan Your Trip</h2>
-                <p class="section-desc">Select your destination and preferences to get an estimated budget calculation.</p>
+                <p class="section-desc">Tailor an escape suited to your rhythm, companions, and budget.</p>
             </div>
 
             <div class="planner-wrapper">
@@ -418,37 +665,39 @@
                             <label for="planDest">Select Destination</label>
                             <select id="planDest" required>
                                 <option value="">Choose a destination...</option>
-                                <option value="Ladakh">Ladakh (7–8 Days &bull; ₹45,000)</option>
-                                <option value="Beas Kund">Beas Kund (5 Days &bull; ₹15,000)</option>
-                                <option value="Goa">Goa (5 Days &bull; ₹20,000)</option>
-                                <option value="Darjeeling">Darjeeling (4 Days &bull; ₹15,000)</option>
-                                <option value="Rajasthan">Rajasthan (9 Days &bull; ₹35,000)</option>
-                                <option value="Kerala">Kerala (8 Days &bull; ₹40,000)</option>
-                                <option value="Rishikesh">Rishikesh (3 Days &bull; ₹12,000)</option>
-                                <option value="Delhi">Delhi (4 Days &bull; ₹12,000)</option>
-                                <option value="Bandhavgarh">Bandhavgarh (4 Days &bull; ₹20,000)</option>
+                                <option value="Ladakh">Ladakh (7–8 Days &bull; Highlands)</option>
+                                <option value="Goa">Goa (5 Days &bull; Coastal Serenity)</option>
+                                <option value="Kerala">Kerala (8 Days &bull; Backwaters &amp; Hills)</option>
+                                <option value="Rajasthan">Rajasthan (9 Days &bull; Palaces &amp; Thar)</option>
+                                <option value="Rishikesh">Rishikesh (3 Days &bull; Ganges &amp; Yoga)</option>
+                                <option value="Darjeeling">Darjeeling (4 Days &bull; Himalayan Tea)</option>
+                                <option value="Meghalaya">Meghalaya (6 Days &bull; Cloud Realm)</option>
+                                <option value="Andaman">Andaman (6 Days &bull; Turquoise Seas)</option>
+                                <option value="Beas Kund">Beas Kund &bull; Manali (5 Days &bull; Alpine Trek)</option>
+                                <option value="Varanasi">Varanasi (3 Days &bull; Spiritual Heritage)</option>
                             </select>
                         </div>
 
                         <!-- Field 2: Travelers -->
                         <div class="form-field">
-                            <label for="planTravelers">Number of Travelers</label>
+                            <label for="planTravelers">Travelers</label>
                             <select id="planTravelers" required>
-                                <option value="1">1 Person (Solo)</option>
-                                <option value="2" selected>2 Persons (Pair)</option>
-                                <option value="3">3 Persons</option>
-                                <option value="4">4 Persons (Group)</option>
-                                <option value="5">5+ Persons (Family/Large Group)</option>
+                                <option value="1">Solo Traveler (1 Person)</option>
+                                <option value="2" selected>Couple / Pair (2 People)</option>
+                                <option value="3-4">Small Group (3–4 People)</option>
+                                <option value="5+">Family / Group (5+ People)</option>
                             </select>
                         </div>
 
                         <!-- Field 3: Duration -->
                         <div class="form-field">
-                            <label for="planDuration">Trip Duration: <strong id="durationVal">5 Days</strong></label>
-                            <input type="range" id="planDuration" min="3" max="14" value="5" step="1">
-                            <div class="slider-labels">
-                                <span>3 Days</span>
-                                <span>14 Days</span>
+                            <label for="planDuration">Trip Duration: <strong id="durationVal">7 Days</strong></label>
+                            <div class="slider-wrapper">
+                                <input type="range" id="planDuration" min="3" max="14" value="7" step="1">
+                                <div class="slider-labels">
+                                    <span>3 Days</span>
+                                    <span>14 Days</span>
+                                </div>
                             </div>
                         </div>
 
@@ -456,11 +705,13 @@
                         <div class="form-field">
                             <label>Travel Style</label>
                             <div class="style-options" id="styleOptions">
-                                <button type="button" class="style-chip active" data-style="Standard">Standard</button>
-                                <button type="button" class="style-chip" data-style="Budget">Budget</button>
-                                <button type="button" class="style-chip" data-style="Comfort">Comfort</button>
+                                <button type="button" class="style-chip active" data-style="Adventure">Adventure</button>
+                                <button type="button" class="style-chip" data-style="Relaxation">Relaxation</button>
+                                <button type="button" class="style-chip" data-style="Culture">Culture</button>
+                                <button type="button" class="style-chip" data-style="Nature">Nature</button>
+                                <button type="button" class="style-chip" data-style="Luxury">Luxury</button>
                             </div>
-                            <input type="hidden" id="selectedStyle" value="Standard">
+                            <input type="hidden" id="selectedStyle" value="Adventure">
                         </div>
 
                     </div>
@@ -468,48 +719,48 @@
                     <!-- Submit Button -->
                     <div class="planner-submit">
                         <button type="submit" class="btn btn-primary btn-large">
-                            Calculate Trip Cost
+                            ✦ BUILD MY TRIP RECOMMENDATION
                         </button>
                     </div>
                 </form>
 
-                <!-- Recommendation Result Card -->
+                <!-- Dynamic Recommendation Result Card (Revealed on submit) -->
                 <div id="planResult" class="plan-result-card hidden">
                     <div class="result-header">
-                        <span class="result-badge">ESTIMATED TRIP SUMMARY</span>
-                        <h3 id="resTitle" class="result-title">Trip Estimate</h3>
-                        <p id="resTagline" class="result-tagline">Summary of your selected plan.</p>
+                        <span class="result-badge">YOUR RECOMMENDED ITINERARY</span>
+                        <h3 id="resTitle" class="result-title">7-Day Curated Ladakh Adventure</h3>
+                        <p id="resTagline" class="result-tagline">Designed for 2 travelers seeking high-altitude thrill and scenic seclusion.</p>
                     </div>
 
                     <div class="result-body">
                         <div class="result-stats">
                             <div class="res-stat">
                                 <span class="r-lbl">Estimated Total</span>
-                                <span class="r-val" id="resBudget">₹0</span>
+                                <span class="r-val" id="resBudget">₹90,000</span>
                             </div>
                             <div class="res-stat">
                                 <span class="r-lbl">Duration</span>
-                                <span class="r-val" id="resDuration">5 Days</span>
+                                <span class="r-val" id="resDuration">7 Days / 6 Nights</span>
                             </div>
                             <div class="res-stat">
                                 <span class="r-lbl">Travel Style</span>
-                                <span class="r-val" id="resStyle">Standard</span>
+                                <span class="r-val" id="resStyle">Adventure &bull; Guided</span>
                             </div>
                         </div>
 
                         <div class="result-highlights">
-                            <h4>Includes:</h4>
+                            <h4>Recommended Itinerary Inclusions:</h4>
                             <ul id="resInclusions">
-                                <li>✔ Hotel / Guest House Accommodation</li>
-                                <li>✔ Sightseeing &amp; Local Transportation</li>
-                                <li>✔ Daily Breakfast</li>
-                                <li>✔ Basic Travel Support</li>
+                                <li>✔ Private acclimatization day &amp; Leh heritage trail walk</li>
+                                <li>✔ Nubra Valley camel dunes camp &amp; Khardung La pass crossing</li>
+                                <li>✔ Overnight lakeside retreat at Pangong Tso</li>
+                                <li>✔ Dedicated local mountain driver &amp; 24/7 concierge</li>
                             </ul>
                         </div>
 
                         <div class="result-cta-row">
-                            <button class="btn btn-primary" onclick="alert('Thank you! Your trip inquiry has been submitted successfully.')">Confirm Booking</button>
-                            <button class="btn btn-secondary" onclick="document.getElementById('planResult').classList.add('hidden')">Close</button>
+                            <button class="btn btn-primary" onclick="alert('Thank you! Our senior travel designer has received your itinerary request. We will email your complete day-by-day customized route PDF within 24 hours.')">Book This Itinerary</button>
+                            <button class="btn btn-secondary" onclick="document.getElementById('planResult').classList.add('hidden')">Edit Options</button>
                         </div>
                     </div>
                 </div>
@@ -519,13 +770,80 @@
     </section>
 
     <!-- ==============================================
-         5. SIMPLE CLEAN FOOTER (Student Project)
+         9. CALL TO ACTION (Cinematic Full-Width)
          ============================================== -->
-    <footer class="simple-footer">
-        <div class="container text-center">
-            <p>&copy; 2026 WANDERLUST — Student Travel &amp; Tourism Project</p>
+    <section class="section cta-section">
+        <div class="cta-media">
+            <img src="https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&w=2000&q=85" alt="The World Is Waiting" class="cta-bg-img" loading="lazy">
+            <div class="cta-overlay"></div>
+        </div>
+        <div class="cta-content container text-center">
+            <span class="cta-eyebrow">YOUR JOURNEY AWAITS</span>
+            <h2 class="cta-title">THE WORLD IS WAITING.</h2>
+            <p class="cta-desc">“Your next unforgettable journey starts here. Step beyond the ordinary.”</p>
+            <a href="#destinations" class="btn btn-primary btn-large">START EXPLORING</a>
+        </div>
+    </section>
+
+    <!-- ==============================================
+         10. FOOTER
+         ============================================== -->
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <a href="#home" class="logo">
+                    <span class="logo-text">WANDERLUST</span>
+                    <span class="logo-sub">JOURNEYS</span>
+                </a>
+                <p class="footer-tagline">“Not all classrooms have four walls.”</p>
+                <p class="footer-subtext">Dedicated to curious minds, mindful explorers, and extraordinary journeys across India.</p>
+                <div class="footer-socials">
+                    <a href="#instagram" aria-label="Instagram" class="social-icon">Instagram</a>
+                    <a href="#youtube" aria-label="YouTube" class="social-icon">YouTube</a>
+                    <a href="#linkedin" aria-label="LinkedIn" class="social-icon">LinkedIn</a>
+                </div>
+            </div>
+
+            <div class="footer-col">
+                <h4>Navigation</h4>
+                <ul>
+                    <li><a href="#destinations">Destinations</a></li>
+                    <li><a href="#journeys">Featured Journeys</a></li>
+                    <li><a href="#regions">Regional Explorer</a></li>
+                    <li><a href="#stories">Travel Stories</a></li>
+                    <li><a href="#planner">Plan Your Trip</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Featured Regions</h4>
+                <ul>
+                    <li><a href="#destinations" onclick="filterByMood('adventure')">Ladakh &amp; High Passes</a></li>
+                    <li><a href="#destinations" onclick="filterByMood('nature')">Kerala Backwaters</a></li>
+                    <li><a href="#destinations" onclick="filterByMood('culture')">Royal Rajasthan</a></li>
+                    <li><a href="#destinations" onclick="filterByMood('adventure')">Rishikesh &amp; Ganga</a></li>
+                    <li><a href="#destinations" onclick="filterByMood('beach')">Goa Coast</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col newsletter-col">
+                <h4>Stay Inspired</h4>
+                <p>Subscribe for seasonal field dispatches, secret trails, and bespoke travel stories.</p>
+                <form id="newsletterForm" class="newsletter-form">
+                    <input type="email" placeholder="Your email address" required aria-label="Your email address">
+                    <button type="submit" class="btn btn-primary">Join</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="footer-bottom container">
+            <p>&copy; 2026 WANDERLUST Journeys &bull; Made for curious minds and adventurous souls.</p>
+            <p class="designer-note">Designed &amp; Engineered for Web Programming Competition</p>
         </div>
     </footer>
+
+    <!-- Back to top floating button -->
+    <button id="backToTopBtn" class="back-to-top" title="Scroll back to top" aria-label="Back to top">↑</button>
 
     <!-- Modal for Destination Quick Preview -->
     <div id="destinationModal" class="modal-backdrop hidden" role="dialog" aria-modal="true">
@@ -540,15 +858,15 @@
                 <h3 id="modalTitle" class="modal-title"></h3>
                 <p id="modalDesc" class="modal-desc"></p>
                 <div class="modal-highlights">
-                    <h4>Trip Highlights:</h4>
+                    <h4>Trip Essentials:</h4>
                     <ul id="modalHighlightsList"></ul>
                 </div>
                 <div class="modal-footer">
                     <div>
-                        <span class="m-price-lbl">Cost per person</span>
+                        <span class="m-price-lbl">Estimated Budget</span>
                         <span id="modalPrice" class="m-price-val"></span>
                     </div>
-                    <button class="btn btn-primary" onclick="proceedToPlanFromModal()">Plan This Trip &rarr;</button>
+                    <button class="btn btn-primary" onclick="proceedToPlanFromModal()">Plan This Escape &rarr;</button>
                 </div>
             </div>
         </div>
